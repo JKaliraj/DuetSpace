@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assests/logo.png" type="image/x-icon">
+  <title>Duet - Private Video Chat</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+
+<body>
+  <div id="splash">
+    <div class="spinner">
+      <div class="spinnerin"></div>
+    </div>
+  </div>
+  <div id="main">
+    <div class="alert danger-alert">
+      <p id="alert-text"></p>
+    </div>
+    <div id="header">
+      <h2 class="title">duet</h2>
+    </div>
+    <div class="dialer">
+      <button class="neu-btn join-btn-head" onclick="createOpen()">
+        <span class="material-symbols-outlined">add</span> Create Private Room
+      </button>
+      <div id="seperate">
+        <span class="seperator">or</span>
+        <hr>
+      </div>
+
+
+      <input id="joinRoomCode" autocomplete="off" type="text" class="input" placeholder="# Room Code" maxlength="6">
+      <input id="joinRoomPass" autocomplete="off" type="password" class="input" placeholder="? Secret Code" maxlength="6">
+
+      <button class="neu-btn call-btn joinCall" onclick="joinCall()">
+        <span class="material-symbols-outlined">call</span>Join
+      </button>
+
+      <div class="create-room" id="create-room">
+        <button class="neu-btn create-btn-head" onclick="createClose()">
+          <span class="material-symbols-outlined">arrow_back</span>Already have a code
+        </button>
+        <input id="createRoomName" autocomplete="off" type="text" class="input" placeholder="Room Name" maxlength="16">
+        <input id="createRoomCode" autocomplete="off" type="text" class="input" placeholder="# Room Code" maxlength="6">
+
+        <button class="neu-btn call-btn createCall" onclick="createCall()">
+          <span class="material-symbols-outlined">call</span> Create
+        </button>
+
+      </div>
+    </div>
+    <div class="callui">
+      <div class="video" id="video">
+        <div class="remote">
+          <div class="conn">
+            <h2>Waiting for User to Join<br>a Private Room</h2>
+            <div class="loader"></div>
+          </div>
+          <video id="remoteVideo" autoplay></video>
+        </div>
+        <div class="local">
+          <div class="conn">
+            <h2>Allow <span class="title">duet</span> to use your<br> <sub><span
+                  class="material-symbols-outlined">videocam</span></sub> Camera and <sub><span
+                  class="material-symbols-outlined">mic</span></sub> Microphone</h3>
+          </div>
+          <video id="localVideo" autoplay muted></video>
+        </div>
+
+      </div>
+
+      <div class="nav">
+        <div class="av_opt full_scr">
+          <span class="material-symbols-outlined">fullscreen</span>
+        </div>
+        <div class="av_opt mic_on">
+          <span class="material-symbols-outlined">mic</span>
+        </div>
+        <div class="circle" onclick="endCall()">
+          <span class="circle__btn">
+            <span class="material-symbols-outlined callend">call_end</span>
+          </span>
+          <span class="circle__back-1"></span>
+          <span class="circle__back-2"></span>
+        </div>
+        <div class="av_opt cam_on">
+          <span class="material-symbols-outlined">videocam</span>
+        </div>
+        <div class="av_opt shareBtn">
+          <span class="material-symbols-outlined">share</span>
+        </div>
+
+        <div class="roomDetails">
+          <ul>
+            <li>
+              <p>Room Name </p><span id="roomNameDetail"></span>
+            </li>
+            <li>
+              <p>Room Code </p><span id="roomCodeDetail"></span>
+            </li>
+            <li>
+              <p>Secret Code </p><span id="roomSecretDetail"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/fire.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
