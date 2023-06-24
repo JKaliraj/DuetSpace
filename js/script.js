@@ -1,3 +1,5 @@
+const SCALEDRONE_ID = 'YOUR_SCALEDRONE_API';
+
 window.onload = function () {
   if (window.location.hash == '') {
 
@@ -158,7 +160,7 @@ function startCall(code, secretCode) {
   location.hash = code + "&" + secretCode;
   const roomHash = location.hash.substring(1);
   // TODO: Replace with your own channel ID
-  const drone = new ScaleDrone('xZB83GgHrdgCjKJJ');
+  const drone = new ScaleDrone(SCALEDRONE_ID);
   // Room name needs to be prefixed with 'observable-'
   const roomName = 'observable-' + roomHash;
   const configuration = {
