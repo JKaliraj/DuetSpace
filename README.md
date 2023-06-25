@@ -34,6 +34,8 @@ Replace Your own [Firebase](https://console.firebase.google.com/) config in js/f
 };
 ```
 Replace Your [Scaledrone](https://dashboard.scaledrone.com/login) channel ID in js/script.js 
+![App Screenshot](https://i.postimg.cc/BnmwHWrr/scaledrone.png)
+
 ```bash
   const SCALEDRONE_ID = "YOUR_ID"
 ```
